@@ -3,11 +3,11 @@ package paginator
 import "math"
 
 type Paginator struct {
-	PageSize   int
-	CurPage    int
-	TotalPage  int
-	TotalCount int
-	SortKey    interface{}
+	PageSize   int         `json:"ps"`
+	CurPage    int         `json:"cp"`
+	TotalPage  int         `json:"tp"`
+	TotalCount int         `json:"tc"`
+	SortKey    interface{} `json:"sk"`
 }
 
 func (p *Paginator) GenerateIndexRange() (start int, end int) {
