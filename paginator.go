@@ -1,6 +1,8 @@
 package paginator
 
-import "math"
+import (
+	"math"
+)
 
 type Paginator struct {
 	PageSize   int         `json:"ps"`
@@ -11,6 +13,9 @@ type Paginator struct {
 }
 
 func (p *Paginator) GenerateIndexRange() (start int, end int) {
+	if p.TotalCount <= 0 {
+		return 0, 0
+	}
 	// p.PageSize = 0
 	start = 0
 	end = p.TotalCount

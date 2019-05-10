@@ -83,3 +83,13 @@ func TestPaginator(t *testing.T) {
 		}
 	}
 }
+
+func TestZeroPaginator(t *testing.T) {
+	pg := Paginator{
+		TotalCount: 0,
+		CurPage:    0,
+		PageSize:   0,
+	}
+	pg.GenerateIndexRange()
+	fmt.Println("######", pg.PageSize, pg.CurPage, pg.TotalCount, pg.TotalPage)
+}
